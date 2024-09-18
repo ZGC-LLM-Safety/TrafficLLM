@@ -14,6 +14,51 @@ Note: this code is based on [ChatGLM2](https://github.com/THUDM/ChatGLM2-6B) and
 * **Dual-Stage Tuning Pipeline.** TrafficLLM employs a dual-stage tuning pipeline to achieve LLM’s robust representation learning across different traffic-domain tasks. The pipeline trains LLM to understand instructions and learn task-related traffic patterns at different stages, which builds upon TrafficLLM task understanding and traffic reasoning abilities for diverse traffic detection and generation tasks.
 * **Extensible Adaptation with Parameter-Effective Fine-Tuning (EA-PEFT).** To adapt LLM for generalization to new traffic environments, TrafficLLM proposes an extensible adaptation with parameter-effective fine-tuning (EA-PEFT) to update model parameters with low overhead. The technique splits model capabilities in different PEFT models, which helps minimize the costs on dynamic scenarios raised by traffic pattern changes.
 
+## TrafficLLM Datasets
+
+We released TrafficLLM's [training datasets](https://drive.google.com/drive/folders/1RZAOPcNKq73-quA8KG_lkAo_EqlwhlQb), which contains over 0.4M traffic data and 9K human instructions for LLM adaptation across different traffic analysis tasks.
+
+* `Instruction Datasets`: The instruction datasets are used to help LLM learn the domain knowledge of traffic detection or generation tasks and understand which task should be conduct in different scenarios.
+* `Traffic Datasets`: The traffic datasets contains the traffic tuning data we extracted from the public traffic datasets, which helps LLM learn the traffic pattern in differernt downstream tasks.
+
+### Instruction Datasets
+
+To build the natural language corpus as the human instructions in TrafficLLM, we collected the 9,209 task-specific instructions supervised by experts and AI assistants. The statistics are shown as follows:
+
+| Mainstream Tasks   | Downstream Tasks             | Abbrev. | #Sample |
+| ------------------ | ---------------------------- | ------- | ------- |
+| Tracffic Detection | Malware Traffic Detection    | MTD     | 1K      |
+|                    | Botnet Detection             | BND     | 1.1K    |
+|                    | Malicious DoH Detection      | MDD     | 0.6K    |
+|                    | Web Attack Detection         | WAD     | 0.6K    |
+|                    | APT Attack Detection         | AAD     | 0.6K    |
+|                    | Encrypted VPN Detection      | EVD     | 1.2K    |
+|                    | Tor Behavior Detection       | TBD     | 0.6K    |
+|                    | Encrypted App Classification | EAC     | 0.6K    |
+|                    | Website Fingerprinting       | WF      | 0.6K    |
+|                    | Concept Drift                | CD      | 0.6K    |
+| Traffic Generation | Malware Traffic Generation   | MTG     | 0.6K    |
+|                    | Botnet Traffic Generation    | BTG     | 0.1K    |
+|                    | Encrypted VPN Generation     | EVG     | 0.4K    |
+|                    | Encrypted App Generation     | EAG     | 0.6K    |
+
+### Traffic Datasets
+
+To evaluate the performance of TrafficLLM on various network scenarios, we extracted over 0.4M tuning data from public-available traffic datasets to measure TrafficLLM’s abilities to detect or generation malicious and benign traffic. The statistics are shown as follows:
+
+| Datasets         | Tasks                        | Abbrev. | #Sample |
+| ---------------- | ---------------------------- | ------- | ------- |
+| USTC TFC 2016    | Malware Traffic Detection    | MTD     | 50.7K   |
+| ISCX Botnet 2014 | Botnet Detection             | BND     | 25.0K   |
+| DoHBrw 2020      | Malicious DoH Detection      | MDD     | 47.8K   |
+| CSIC 2010        | Web Attack Detection         | WAD     | 34.5K   |
+| DAPT 2020        | APT Attack Detection         | AAD     | 10.0K   |
+| ISCX VPN 2016    | Encrypted VPN Detection      | EVD     | 64.8K   |
+| ISCX Tor 2016    | Tor Behavior Detection       | TBD     | 40.0K   |
+| CSTNET 2023      | Encrypted App Classification | EAC     | 97.6K   |
+| CW-100 2018      | Website Fingerprinting       | WF      | 8.1K    |
+| APP-53 2023      | Concept Drift                | CD      | 21.5K   |
+
 ## Getting Started
 
 <span id='all_catelogue'/>
