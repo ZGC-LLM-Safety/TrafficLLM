@@ -27,7 +27,7 @@ To build the natural language corpus as the human instructions in TrafficLLM, we
 
 | Mainstream Tasks   | Downstream Tasks             | Abbrev. | #Sample |
 | ------------------ | ---------------------------- | ------- | ------- |
-| Tracffic Detection | Malware Traffic Detection    | MTD     | 1K      |
+| Tracffic Detection | Malware Traffic Detection    | MTD     | 1.0K    |
 |                    | Botnet Detection             | BND     | 1.1K    |
 |                    | Malicious DoH Detection      | MDD     | 0.6K    |
 |                    | Web Attack Detection         | WAD     | 0.6K    |
