@@ -275,7 +275,7 @@ python evaluation.py --model_name /Your/Base/Model/Path --traffic_task detection
 
 ## Deployment of TrafficLLM
 
-You can chat with TrafficLLM by deploying it on your local device. You should first config the model path in [config.json](config.json) to register the PEFT models collected from the training steps. There is an example to register 6 downstream task in TrafficLLM:
+You can deploy TrafficLLM on your local device. First, config the model path in [config.json](config.json) to register the PEFT models collected from the training steps. There is an example to register 6 tasks in TrafficLLM:
 
 ```json
 {
@@ -300,7 +300,7 @@ You can chat with TrafficLLM by deploying it on your local device. You should fi
     }
 }
 ```
-Then you should add the preprompt in the `prepromt` function of [inference.py](inference.py) and [trafficllm_server.py](trafficllm_server.py). The preprompt is the prefix text used in the training data during the task-specific traffic tuning to ensure the instruction-following ability.
+Then you should add the preprompt in the `prepromt` function of [inference.py](inference.py) and [trafficllm_server.py](trafficllm_server.py). The preprompt is the prefix text used in the training data during the task-specific traffic tuning.
 
 ### Terminal Demo
 
@@ -316,7 +316,9 @@ You can launch the website demo of TrafficLLM using the following command:
 ```shell
 streamlit run trafficllm_server.py
 ```
-This demo runs a Web server of TrafficLLM. Access `http:Your-Server-IP:Port` in the browser to chat with TrafficLLM in the chatbox.
+This demo runs a Web server of TrafficLLM. Access `http:Your-Server-IP:Port` to chat in the chatbox.
+
+![Web demo](images/web-demo.gif)
 
 ## Acknowledgements
 
