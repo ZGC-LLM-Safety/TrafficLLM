@@ -31,9 +31,10 @@ def td_evaluation(predict_responses, target_responses, label_file):
     preds = []
     labels = []
     for predict_response, target_response in zip(predict_responses, target_responses):
-        print(predict_response)
+        if "。" in predict_response and "。" in target_response:
+            predict_response = predict_response[:-1]
+            target_response = target_response[:-1]
         if ' ' not in predict_response:
-            print(1)
             if predict_response not in label_dict.keys():
                 preds.append(len(label_dict.keys()))
                 print("generated mistake labels:", predict_response)

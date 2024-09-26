@@ -273,7 +273,50 @@ There is an example to run evaluation on MTD tasks.
 python evaluation.py --model_name /Your/Base/Model/Path --traffic_task detection --test_file datasets/ustc-tfc-2016/ustc-tfc-2016_detection_packet_test.json --label_file datasets/ustc-tfc-2016/ustc-tfc-2016_label.json --ptuning_path models/chatglm2/peft/ustc-tfc-2016-detection-packet/checkpoints-20000/
 ```
 
+## Deployment of TrafficLLM
 
+You can chat with TrafficLLM by deploying it on your local device. You should first config the model path in [config.json](config.json) to register the PEFT models collected from the training steps. There is an example to register 6 downstream task in TrafficLLM:
+
+```json
+{
+    "model_path": "models/chatglm2/chatglm2-6b/",
+    "peft_path": "models/chatglm2/peft/",
+    "peft_set": {
+      "NLP": "instruction/checkpoint-8000/",
+      "MTD": "ustc-tfc-2016-detection-packet/checkpoint-10000/",
+      "BND": "iscx-botnet-2014-detection-packet/checkpoint-5000/",
+      "WAD": "csic-2010-detection-packet/checkpoint-6000/",
+      "AAD": "dapt-2020-detection-packet/checkpoint-20000/",
+      "EVD": "iscx-vpn-2016-detection-packet/checkpoint-4000/",
+      "TBD": "iscx-tor-2016-detection-packet/checkpoint-10000/"
+    },
+    "tasks": {
+      "Malware Traffic Detection": "MTD",
+      "Botnet Detection": "BND",
+      "Web Attack Detection": "WAD",
+      "APT Attack Detection": "AAD",
+      "Encrypted VPN Detection": "EVD",
+      "Tor Behavior Detection": "TBD"
+    }
+}
+```
+Then you should add the preprompt in the `prepromt` function of [inference.py](inference.py) and [trafficllm_server.py](trafficllm_server.py). The preprompt is the prefix text used in the training data during the task-specific traffic tuning to ensure the instruction-following ability.
+
+### Terminal Demo
+
+To chat with TrafficLLM in the terminal mode, you can run the following command:
+
+```shell
+python inference --config=config.json --prompt="Your Instruction Text + <packet>: + Traffic Data"
+```
+
+### Website Demo
+
+You can launch the website demo of TrafficLLM using the following command:
+```shell
+streamlit run trafficllm_server.py
+```
+This demo runs a Web server of TrafficLLM. Access `http:Your-Server-IP:Port` in the browser to chat with TrafficLLM in the chatbox.
 
 ## Acknowledgements
 
