@@ -316,7 +316,7 @@ You can launch the website demo of TrafficLLM using the following command:
 ```shell
 streamlit run trafficllm_server.py
 ```
-This demo runs a Web server of TrafficLLM. Access `http:Your-Server-IP:Port` to chat in the chatbox.
+This demo runs a Web server of TrafficLLM. Access `http://Your-Server-IP:Port` to chat in the chatbox.
 
 ![Web demo](images/web-demo.gif)
 
