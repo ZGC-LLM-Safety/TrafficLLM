@@ -1,8 +1,11 @@
 # TrafficLLM: Enhancing Large Language Models for Network Traffic Analysis with Robust Traffic Representation
 
-<a href='#'><img src='https://img.shields.io/badge/Project-Page-purple'></a> 
-
-<a href='https://mp.weixin.qq.com/s/pt2CfG0i9Fex-sy7-dcoyg' target='_blank'><img src='https://img.shields.io/badge/中文-博客-blue'></a>
+<p align="center">
+  <a href='https://github.com/ZGC-LLM-Safety/TrafficLLM'><img src='https://img.shields.io/badge/Project-Page-purple'></a> 
+  <a href='https://drive.google.com/drive/folders/1RZAOPcNKq73-quA8KG_lkAo_EqlwhlQb'><img src='https://img.shields.io/badge/Datasets-Page-red'></a> 
+  <a href='https://github.com/ZGC-LLM-Safety/TrafficLLM/tree/master/models'><img src='https://img.shields.io/badge/Models-Page-green'></a> 
+  <a href='https://mp.weixin.qq.com/s/pt2CfG0i9Fex-sy7-dcoyg' target='_blank'><img src='https://img.shields.io/badge/Chinese-Blog-blue'></a>
+</p>
 
 The repository of **TrafficLLM**, a universal LLM adaptation framework to learn robust traffic representation for all open-sourced LLM in real-world scenarios and enhance the generalization across diverse traffic analysis tasks.
 
