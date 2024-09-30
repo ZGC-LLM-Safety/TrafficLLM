@@ -98,7 +98,7 @@ conda create -n trafficllm python=3.9
 conda activate trafficllm
 
 # Clone our TrafficLLM
-git clone https://github.com/TrafficLLMv1/TrafficLLM.git
+git clone https://github.com/ZGC-LLM-Safety/TrafficLLM.git
 cd TrafficLLM
 # Install required libraries
 pip install -r requirements.txt
