@@ -127,14 +127,14 @@ TrafficLLM is trained based on existing open-sourced LLMs. Please follow the ins
 
 To extract suitable training data for LLM learning from the raw traffic datasets, we design specialized extractors to preprocess traffic datasets for different tasks. The preprocessing code contain the following parameters to config.
 
-* `input`: The raw traffic dataset path.
-* `dataset_name`: The raw traffic dataset name (It helps if the name has registered in TrafficLLM's codes). 
+* `input`: The raw traffic dataset path (The main directory path that contains labeled sub-directories. Each labeled sub-directories contains the raw .pcap files to be preprocessed).
+* `dataset_name`: The raw traffic dataset name (It helps judge if the name has registered in TrafficLLM's codes). 
 * `traffic_task`: Detection tasks or generation tasks.
 * `granularity`: Packet-level or flow-level granularity.
 * `output_path`: Output training dataset path.
 * `output_name`: Output training dataset name.
 
-This is an instance to preprocess datasets for packet-level traffic detection tasks.
+This is an instance to preprocess raw traffic datasets for packet-level traffic detection tasks.
 
 ```shell
 cd preprocess
