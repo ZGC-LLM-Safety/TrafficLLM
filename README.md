@@ -1,5 +1,9 @@
 # TrafficLLM: Enhancing Large Language Models for Network Traffic Analysis with Robust Traffic Representation
 
+<a href='#'><img src='https://img.shields.io/badge/Project-Page-purple'></a> 
+
+<a href='https://mp.weixin.qq.com/s/pt2CfG0i9Fex-sy7-dcoyg' target='_blank'><img src='https://img.shields.io/badge/中文-博客-blue'></a>
+
 The repository of **TrafficLLM**, a universal LLM adaptation framework to learn robust traffic representation for all open-sourced LLM in real-world scenarios and enhance the generalization across diverse traffic analysis tasks.
 
 ![TrafficLLM's framework](images/fig3-trafficllm-framework.png)
@@ -112,7 +116,7 @@ TrafficLLM employs three core techniques: **traffic-domain tokenization** to pro
 TrafficLLM is trained based on existing open-sourced LLMs. Please follow the instructions to prepare the checkpoints.
 
 * `ChatGLM2`: Prepare the base model ChatGLM, which is an open-sourced LLM with light-wise deployment requirements. Please download its weights [here](https://huggingface.co/THUDM/chatglm2-6b). We generally utilize the v2 model with 6B parameters.
-* `Other LLMs`: To adapt other LLMs for traffic analysis tasks, you can reuse the [training data](datasets) in the repo and modify their training scripts according to the official instructions. For instance, [Llama2](https://github.com/meta-llama/llama-recipes/blob/main/src/llama_recipes/configs/datasets.py) is required to register the new dataset in the configs.
+* `Other LLMs`: To adapt other LLMs for traffic analysis tasks, you can reuse the [training data](https://drive.google.com/drive/folders/1RZAOPcNKq73-quA8KG_lkAo_EqlwhlQb) in the repo and modify their training scripts according to the official instructions. For instance, [Llama2](https://github.com/meta-llama/llama-recipes/blob/main/src/llama_recipes/configs/datasets.py) is required to register the new dataset in the configs.
 
 <span id='chapter-2.2'/>
 
