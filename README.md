@@ -138,7 +138,7 @@ This is an instance to preprocess datasets for packet-level traffic detection ta
 
 ```shell
 cd preprocess
-python preprocess_dataset.py --input /Your/Raw/Dataset/Path --dataset_name /Your/Raw/Dataset/Name --traffic_task detection --granularity packet-level --output_path /Your/Output/Dataset/Path --output_name /Your/Output/Dataset/Name
+python preprocess_dataset.py --input /Your/Raw/Dataset/Path --dataset_name /Your/Raw/Dataset/Name --traffic_task detection --granularity packet --output_path /Your/Output/Dataset/Path --output_name /Your/Output/Dataset/Name
 ```
 
 <span id='chapter-2.3'/>
