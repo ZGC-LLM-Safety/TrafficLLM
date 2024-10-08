@@ -11,7 +11,7 @@ torchrun --standalone --nnodes=1 --nproc-per-node=$NUM_GPUS main.py \
     --prompt_column instruction \
     --response_column output \
     --overwrite_cache \
-    --cache_dir /cache \
+    --cache_dir ../cache \
     --model_name_or_path ../models/chatglm2/chatglm2-6b \
     --output_dir ../models/chatglm2/peft/instruction \
     --overwrite_output_dir \
