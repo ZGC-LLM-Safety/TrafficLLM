@@ -51,7 +51,7 @@ To build the natural language corpus as the human instructions in TrafficLLM, we
 
 ### Traffic Datasets
 
-To evaluate the performance of TrafficLLM on various network scenarios, we extracted over 0.4M tuning data from public-available traffic datasets to measure TrafficLLM’s abilities to detect or generation malicious and benign traffic. The statistics are shown as follows:
+To evaluate the performance of TrafficLLM on various network scenarios, we extracted over 0.4M tuning data from public-available traffic datasets to measure TrafficLLM’s abilities to detect or generate malicious and benign traffic. The statistics are shown as follows:
 
 | Datasets         | Tasks                        | Abbrev. | #Sample |
 | ---------------- | ---------------------------- | ------- | ------- |
