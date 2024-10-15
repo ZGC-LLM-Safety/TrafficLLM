@@ -25,7 +25,7 @@ Note: this code is based on [ChatGLM2](https://github.com/THUDM/ChatGLM2-6B) and
 
 We released TrafficLLM's [training datasets](https://drive.google.com/drive/folders/1RZAOPcNKq73-quA8KG_lkAo_EqlwhlQb), which contains over 0.4M traffic data and 9K human instructions for LLM adaptation across different traffic analysis tasks.
 
-* `Instruction Datasets`: The instruction datasets are used to help LLM learn the domain knowledge of traffic detection or generate tasks and understand which task should be conduct in different scenarios.
+* `Instruction Datasets`: The instruction datasets are used to help LLM learn the domain knowledge of traffic detection or generation tasks and understand which task should be conduct in different scenarios.
 * `Traffic Datasets`: The traffic datasets contains the traffic tuning data we extracted from the public traffic datasets, which helps LLM learn the traffic pattern in differernt downstream tasks.
 
 ### Instruction Datasets
@@ -51,7 +51,7 @@ To build the natural language corpus as the human instructions in TrafficLLM, we
 
 ### Traffic Datasets
 
-To evaluate the performance of TrafficLLM on various network scenarios, we extracted over 0.4M tuning data from public-available traffic datasets to measure TrafficLLM’s abilities to detect or generation malicious and benign traffic. The statistics are shown as follows:
+To evaluate the performance of TrafficLLM on various network scenarios, we extracted over 0.4M tuning data from public-available traffic datasets to measure TrafficLLM’s abilities to detect or generate malicious and benign traffic. The statistics are shown as follows:
 
 | Datasets         | Tasks                        | Abbrev. | #Sample |
 | ---------------- | ---------------------------- | ------- | ------- |
