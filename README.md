@@ -314,7 +314,7 @@ Then you should add the preprompt in the `prepromt` function of [inference.py](i
 To chat with TrafficLLM in the terminal mode, you can run the following command:
 
 ```shell
-python inference --config=config.json --prompt="Your Instruction Text + <packet>: + Traffic Data"
+python inference.py --config=config.json --prompt="Your Instruction Text + <packet>: + Traffic Data"
 ```
 
 ### Website Demo
