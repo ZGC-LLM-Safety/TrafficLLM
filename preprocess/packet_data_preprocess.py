@@ -87,7 +87,7 @@ def build_packet_data(pcap_file, packet_feature="traffic words"):
             build_data.append(packet_data)
 
     elif packet_feature == "traffic words":
-        tmp_path = "preprocess/build_datasets/tmp1.txt"
+        tmp_path = "tmp1.txt"
 
         # tshark 3.6.16
         # fields = ["frame.encap_type", "frame.time", "frame.offset_shift", "frame.time_epoch", "frame.time_delta",
