@@ -11,7 +11,7 @@ def stage1_tuning(model_name, instruction_data):
     --prompt_column instruction \
     --response_column output \
     --overwrite_cache \
-    --cache_dir /cache \
+    --cache_dir ../cache \
     --model_name_or_path " + model_name + " \
     --output_dir ../models/chatglm2/peft/instruction \
     --overwrite_output_dir \
@@ -39,7 +39,7 @@ def stage2_tuning(model_name, traffic_data, task_name):
     --prompt_column instruction \
     --response_column output \
     --overwrite_cache \
-    --cache_dir /cache \
+    --cache_dir ../cache \
     --model_name_or_path " + model_name + " \
     --output_dir ../models/chatglm2/peft/" + task_name + " \
     --overwrite_output_dir \
