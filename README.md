@@ -14,7 +14,7 @@ The repository of **TrafficLLM**, a universal LLM adaptation framework to learn 
 Note: this code is based on [ChatGLM2](https://github.com/THUDM/ChatGLM2-6B) and [Llama2](https://github.com/meta-llama/llama-recipes). Many thanks to the authors.
 
 ## News
-- [x] [2024.10.28] 🎉🎉 We have update the adaptation code for using GLM4 to build TrafficLLM, which has a faster tuning and inference speed than ChatGLM2.
+- [x] [2024.10.28] 🎉🎉 We have update the adaptation code for using GLM4 to build TrafficLLM, which has a faster tuning and inference speed than ChatGLM2. Go to [Adapt2GLM4](https://github.com/ZGC-LLM-Safety/TrafficLLM/tree/master/Adapt2GLM4) for more details.
 
 ## Brief Introduction
 
