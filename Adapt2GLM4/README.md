@@ -1,6 +1,6 @@
 # Adapting TrafficLLM to GLM4
 
-These dir contains the new adapting codes for [GLM4](https://github.com/THUDM/GLM-4). GLM4 is the most recently released version of ChatGLM, which has a faster tuning and inference speed than ChatGLM2. You can download the model and codes from the official repo and use the codes in this dir as reference for tuning, inference, and evaluating with TrafficLLM. 
+This dir contains the new adapting codes for [GLM4](https://github.com/THUDM/GLM-4). GLM4 is the most recently released version of ChatGLM, which has a faster tuning and inference speed than ChatGLM2. You can download the model and codes from the official repo and use the codes in this dir as reference for tuning, inference, and evaluating with TrafficLLM. 
 
 The dir tree is shown as follows:
 ```shell
