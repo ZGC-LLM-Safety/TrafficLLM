@@ -13,6 +13,7 @@ The dir tree is shown as follows:
 │   ├── inference.py
 │   ├── requirements.txt
 │   └── train.sh
+├── Preprocess.py  # Transfer the format of training data for GLM4
 └── README.md
 ```
 Many thanks to GLM4. Thanks for their wonderful work.
