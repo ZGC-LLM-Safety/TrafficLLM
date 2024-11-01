@@ -17,3 +17,5 @@ The dir tree is shown as follows:
 └── README.md
 ```
 Many thanks to GLM4. Thanks for their wonderful work.
+
+Note: Please upgrade the transformers version required by the GLM-4-9B-Chat model to 4.44.0. Re-pull all files except for the model weights (*.safetensor files and tokenizer.model), and update dependencies strictly according to FT/requirements.txt.
