@@ -4,7 +4,7 @@ In this tutorial, we will see how we can leverage TrafficLLM to generate a pcap 
 * The tuning checkpoints for traffic generation tasks: https://github.com/ZGC-LLM-Safety/TrafficLLM/tree/master/models/chatglm2/peft
 * The environments that installed Scapy: https://scapy.net/
 
-We use the `Malware Traffic Generation` task as an example. The checkpoints for generation tasks are trained by following [the training steps](https://github.com/ZGC-LLM-Safety/ZGC-LLM-Safety?tab=readme-ov-file#getting-started). You can follow the instructions to build your custom traffic generation capabilities.
+We use the `Malware Traffic Generation` task as an example. The checkpoints for generation tasks are trained by following [the training steps](https://github.com/ZGC-LLM-Safety/TrafficLLM?tab=readme-ov-file#getting-started). You can follow the instructions to build your custom traffic generation capabilities.
 
 ## 1. Preparation
 Please clone the repo and install the required environment by runing the following commands.
