@@ -41,9 +41,9 @@ def preprompt(task, traffic_data):
         "BND": "Given the following traffic data <packet> that contains protocol fields, traffic features, "
                "and payloads. Please conduct the BOTNET DETECTION TASK to determine which type of network the "
                "traffic belongs to. The categories include 'IRC, Neris, RBot, Virut, normal'.\n",
-        "WAD": "Classify the given HTTP request into normal and abnormal categories. Each HTTP request will consist "
+        "WAD": "Classify the given HTTP request into benign and malicious categories. Each HTTP request will consist "
                "of three parts: method, URL, and body, presented in JSON format. If a web attack is detected in an "
-               "HTTP request, please output an 'exception'. Only output 'abnormal' or 'normal', no additional output "
+               "HTTP request, please output an 'exception'. Only output 'malicious' or 'benign', no additional output "
                "is required. The given HTTP request is as follows:\n",
         "AAD": "Classify the given HTTP request into normal and abnormal categories. Each HTTP request will consist "
                "of three parts: method, URL, and body, presented in JSON format. If a web attack is detected in an "
