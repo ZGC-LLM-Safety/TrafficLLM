@@ -43,9 +43,9 @@ def preprompt(task, traffic_data):
         "BND": "Given the following traffic data <packet> that contains protocol fields, traffic features, "
                "and payloads. Please conduct the BOTNET DETECTION TASK to determine which type of network the "
                "traffic belongs to. The categories include 'IRC, Neris, RBot, Virut, normal'.\n",
-        "WAD": "Classify the given HTTP request into benign and malicious categories. Each HTTP request will consist "
+        "WAD": "Classify the given HTTP request into normal and abnormal categories. Each HTTP request will consist "
                "of three parts: method, URL, and body, presented in JSON format. If a web attack is detected in an "
-               "HTTP request, please output an 'exception'. Only output 'malicious' or 'benign', no additional output "
+               "HTTP request, please output an 'exception'. Only output 'abnormal' or 'normal', no additional output "
                "is required. The given HTTP request is as follows:\n",
         "AAD": "Classify the given HTTP request into normal and abnormal categories. Each HTTP request will consist "
                "of three parts: method, URL, and body, presented in JSON format. If a web attack is detected in an "
@@ -64,6 +64,52 @@ def preprompt(task, traffic_data):
     prompt = prepromt_set[task] + traffic_data
 
     return prompt
+
+
+def load_pcap(pcap_file):
+    build_data = []
+    tmp_path = "tmp.txt"
+
+    fields = ["frame.encap_type", "frame.time", "frame.offset_shift", "frame.time_epoch", "frame.time_delta",
+              "frame.time_relative", "frame.number", "frame.len", "frame.marked", "frame.protocols", "eth.dst",
+              "eth.dst_resolved", "eth.src", "eth.src_resolved", "eth.type",
+              "ip.version", "ip.hdr_len", "ip.dsfield", "ip.dsfield.dscp", "ip.dsfield.ecn", "ip.len", "ip.id",
+              "ip.flags", "ip.flags.rb", "ip.flags.df", "ip.flags.mf", "ip.frag_offset", "ip.ttl", "ip.proto",
+              "ip.checksum", "ip.checksum.status", "tcp.srcport", "tcp.dstport", "tcp.stream",
+              "tcp.len", "tcp.seq", "tcp.nxtseq", "tcp.ack", "tcp.hdr_len", "tcp.flags",
+              "tcp.flags.res", "tcp.flags.ns", "tcp.flags.cwr", "tcp.flags.ecn", "tcp.flags.urg", "tcp.flags.ack",
+              "tcp.flags.push", "tcp.flags.reset", "tcp.flags.syn", "tcp.flags.fin", "tcp.flags.str",
+              "tcp.window_size", "tcp.window_size_scalefactor", "tcp.checksum", "tcp.checksum.status",
+              "tcp.urgent_pointer",
+              "tcp.time_relative", "tcp.time_delta", "tcp.analysis.bytes_in_flight", "tcp.analysis.push_bytes_sent",
+              "tcp.segment",
+              "tcp.segment.count", "tcp.reassembled.length", "tcp.payload", "udp.srcport", "udp.dstport", "udp.length",
+              "udp.checksum", "udp.checksum.status", "udp.stream", "data.len"]
+
+    extract_str = " -e " + " -e ".join(fields) + " "
+    cmd = "tshark -r " + pcap_file + extract_str + "-T fields -Y 'tcp or udp' > " + tmp_path
+    os.system(cmd)
+
+    with open(tmp_path, "r", encoding="utf-8") as fin:
+        lines = fin.readlines()
+    for line in lines:
+        packet_data = ""
+        values = line[:-1].split("\t")
+
+        packet_data += fields[0] + ": " + values[0]
+        for field, value in zip(fields[1:], values[1:]):
+            if field == "tcp.flags.str":
+                value = value.encode("unicode_escape").decode("unicode_escape")
+            if field == "tcp.payload":
+                value = value[:1000] if len(value) > 1000 else value
+            if value == "":
+                continue
+            packet_data += ", "
+            packet_data += field + ": " + value
+
+        build_data.append(packet_data)
+
+    return build_data[0]
 
 
 def dual_stage_inference(human_instruction, traffic_data, model):
@@ -137,10 +183,39 @@ human_instruction = st.text_area(label="User Instruction",
                            placeholder="Please enter your instruction to describe which "
                                        "traffic analysis task to conduct here.")
 
-traffic_data = st.text_area(label="Traffic Data",
-                           height=200,
-                           placeholder="Please enter the traffic features extracted from TrafficLLM's preprocessing "
-                                       "codes here. Start with <packet> indicator except for WAD and AAD tasks.")
+# traffic_data = st.text_area(label="Traffic Data",
+#                            height=200,
+#                            placeholder="Please enter the traffic features extracted from TrafficLLM's preprocessing "
+#                                        "codes here. Start with <packet> indicator except for WAD and AAD tasks.")
+
+traffic_data = ""
+
+uploaded_file = st.file_uploader("Please upload the PCAP file.", type=None)
+
+if uploaded_file is not None:
+
+    save_path = f"./test.pcap"
+
+    progress_bar = st.progress(0)
+
+    chunk_size = 1024 * 1024
+    bytes_written = 0
+
+    with open(save_path, "wb") as f:
+        while True:
+            file_chunk = uploaded_file.read(chunk_size)
+            if not file_chunk:
+                break
+
+            f.write(file_chunk)
+            bytes_written += len(file_chunk)
+
+            progress_percent = bytes_written / uploaded_file.size
+            progress_bar.progress(progress_percent)
+
+    traffic_data = load_pcap(save_path)
+
+    st.success(f"The PCAP file has been uploaded.")
 
 button = st.button("Submit", key="predict")
 
@@ -149,6 +224,7 @@ if button:
     input_placeholder.markdown("**Human instruction:** %s **Traffic data:** %s."
                                % (human_instruction if human_instruction != "" else "None.",
                                   traffic_data if traffic_data != "" else "None"))
+
     print("Human instruction: " + human_instruction)
     print("Traffic data: " + traffic_data)
 

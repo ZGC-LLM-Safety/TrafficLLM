@@ -329,7 +329,7 @@ streamlit run trafficllm_server.py
 ```
 This demo runs a Web server of TrafficLLM. Access `http://Your-Server-IP:Port` to chat in the chatbox.
 
-![Web demo](images/web-demo.gif)
+![Web demo](images/web-demo-new.gif)
 
 ## Acknowledgements
 
