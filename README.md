@@ -1,7 +1,8 @@
 # TrafficLLM: Enhancing Large Language Models for Network Traffic Analysis with Robust Traffic Representation
 
 <p align="center">
-  <a href='https://github.com/ZGC-LLM-Safety/TrafficLLM'><img src='https://img.shields.io/badge/Project-Page-purple'></a> 
+  <a href='https://github.com/ZGC-LLM-Safety/TrafficLLM'><img src='https://img.shields.io/badge/Project-Page-purple'></a>
+  <a href='https://arxiv.org/abs/2504.04222'><img src='https://img.shields.io/badge/Paper-Arxiv-orange'></a>  
   <a href='https://drive.google.com/drive/folders/1RZAOPcNKq73-quA8KG_lkAo_EqlwhlQb'><img src='https://img.shields.io/badge/Datasets-Page-red'></a> 
   <a href='https://github.com/ZGC-LLM-Safety/TrafficLLM/tree/master/models'><img src='https://img.shields.io/badge/Models-Page-green'></a> 
   <a href='https://mp.weixin.qq.com/s/pt2CfG0i9Fex-sy7-dcoyg' target='_blank'><img src='https://img.shields.io/badge/Chinese-Blog-blue'></a>
@@ -14,6 +15,7 @@ The repository of **TrafficLLM**, a universal LLM adaptation framework to learn 
 Note: this code is based on [ChatGLM2](https://github.com/THUDM/ChatGLM2-6B) and [Llama2](https://github.com/meta-llama/llama-recipes). Many thanks to the authors.
 
 ## News
+- [x] [2025.04.05] 🔥🔥 We release the preprint paper at the [Arxiv website](https://arxiv.org/abs/2504.04222). 
 - [x] [2024.11.26] 🌲🌲 We release the generation code to use TrafficLLM to generate packets with [Scapy](https://scapy.net/), which can generate pcap files that can be read by Wireshark. Go to [tutorials](https://github.com/ZGC-LLM-Safety/TrafficLLM/tree/master/tutorials) for more details.
 - [x] [2024.10.28] 🎉🎉 We have update the adaptation code for using GLM4 to build TrafficLLM, which has a faster tuning and inference speed than ChatGLM2. Go to [Adapt2GLM4](https://github.com/ZGC-LLM-Safety/TrafficLLM/tree/master/Adapt2GLM4) for more details.
 
@@ -334,6 +336,20 @@ This demo runs a Web server of TrafficLLM. Access `http://Your-Server-IP:Port` t
 ## Acknowledgements
 
 Many thanks to the related work [ChatGLM2](https://github.com/THUDM/ChatGLM2-6B) and [Llama2](https://github.com/meta-llama/llama-recipes) that serves as foundations for our framework and codes. The design of building TrafficLLM is inspired by [ET-BERT](https://github.com/linwhitehat/ET-BERT) and [GraphGPT](https://github.com/HKUDS/GraphGPT). Thanks for their wonderful works.
+
+## Cite
+We hope that our work can serve as the stepping stone for more LLM adaptation designs in the traffic analysis community. If the code is helpful in your work, please cite our paper:
+```
+@misc{cui2025trafficllmenhancinglargelanguage,
+      title={TrafficLLM: Enhancing Large Language Models for Network Traffic Analysis with Generic Traffic Representation}, 
+      author={Tianyu Cui and Xinjie Lin and Sijia Li and Miao Chen and Qilei Yin and Qi Li and Ke Xu},
+      year={2025},
+      eprint={2504.04222},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2504.04222}, 
+}
+```
 
 
 
