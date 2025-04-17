@@ -1,10 +1,10 @@
 # TrafficLLM: Enhancing Large Language Models for Network Traffic Analysis with Robust Traffic Representation
 
 <p align="center">
-  <a href='https://github.com/ZGC-LLM-Safety/TrafficLLM'><img src='https://img.shields.io/badge/Project-Page-purple'></a>
+  <a href='https://github.com/ZGC-LLM-Safety/TrafficLLM'><img src='https://img.shields.io/badge/Project-Github-purple'></a>
   <a href='https://arxiv.org/abs/2504.04222'><img src='https://img.shields.io/badge/Paper-Arxiv-orange'></a>  
-  <a href='https://drive.google.com/drive/folders/1RZAOPcNKq73-quA8KG_lkAo_EqlwhlQb'><img src='https://img.shields.io/badge/Datasets-Page-red'></a> 
-  <a href='https://github.com/ZGC-LLM-Safety/TrafficLLM/tree/master/models'><img src='https://img.shields.io/badge/Models-Page-green'></a> 
+  <a href='https://drive.google.com/drive/folders/1RZAOPcNKq73-quA8KG_lkAo_EqlwhlQb'><img src='https://img.shields.io/badge/Datasets-Google Drive-red'></a> 
+  <a href='https://drive.google.com/drive/folders/1YjEhdordqZRpnw_oKczwUztcT52T0oQ0'><img src='https://img.shields.io/badge/Models-Google Drive-green'></a> 
   <a href='https://mp.weixin.qq.com/s/pt2CfG0i9Fex-sy7-dcoyg' target='_blank'><img src='https://img.shields.io/badge/Chinese-Blog-blue'></a>
 </p>
 
