@@ -317,7 +317,7 @@ Then you should add the preprompt in the `prepromt` function of [inference.py](i
 
 ### Fine-tuned Models
 
-To use our fine-tuned models to deploy TrafficLLM, please check the new [Google Drive link](https://drive.google.com/drive/folders/1YZLrSYKgmMr23An6QldB7bTVlR8IH7qL?usp=drive_link) to download the checkpoints you want to add to the configuration.
+To use our fine-tuned models to deploy TrafficLLM, please check the new [Google Drive link](https://drive.google.com/drive/folders/1YjEhdordqZRpnw_oKczwUztcT52T0oQ0) to download the checkpoints you want to add to the configuration.
 
 ### Terminal Demo
 
