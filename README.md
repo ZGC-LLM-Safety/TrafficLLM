@@ -315,6 +315,10 @@ You can deploy TrafficLLM on your local device. First, config the model path in 
 ```
 Then you should add the preprompt in the `prepromt` function of [inference.py](inference.py) and [trafficllm_server.py](trafficllm_server.py). The preprompt is the prefix text used in the training data during the task-specific traffic tuning.
 
+### Fine-tuned Models
+
+To use our fine-tuned models to deploy TrafficLLM, please check the new [Google Drive link](https://drive.google.com/drive/folders/1YZLrSYKgmMr23An6QldB7bTVlR8IH7qL?usp=drive_link) to download the checkpoints you want to add to the configuration.
+
 ### Terminal Demo
 
 To chat with TrafficLLM in the terminal mode, you can run the following command:
