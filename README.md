@@ -344,15 +344,11 @@ Now, we can use TrafficLLM build powerful agents based on [Qwen-Agent](https://g
 
 ### Single-Agent System
 
-<video width="320" height="240" controls>
-    <source src="images/single-agent.mp4" type="video/mp4">
-</video>
+https://private-user-images.githubusercontent.com/43595189/510273517-3255f8ce-54c2-4a70-b2c6-09522896f707.mp4
 
 ### Multi-Agent System
 
-<video width="320" height="240" controls>
-    <source src="images/multi-agent.mp4" type="video/mp4">
-</video>
+https://private-user-images.githubusercontent.com/43595189/510273903-40bda76f-45c9-4668-819a-883ab01e4086.mp4
 
 ## Acknowledgements
 
