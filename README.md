@@ -15,6 +15,7 @@ The repository of **TrafficLLM**, a universal LLM adaptation framework to learn 
 Note: this code is based on [ChatGLM2](https://github.com/THUDM/ChatGLM2-6B) and [Llama2](https://github.com/meta-llama/llama-recipes). Many thanks to the authors.
 
 ## News
+- [x] [2025.11.06] 🌟🌟 We update the MCP configure of using TrafficLLM to build sigle-agent and multi-agent frameworks for network traffic analysis.
 - [x] [2025.04.05] 🔥🔥 We release the preprint paper at the [Arxiv website](https://arxiv.org/abs/2504.04222). 
 - [x] [2024.11.26] 🌲🌲 We release the generation code to use TrafficLLM to generate packets with [Scapy](https://scapy.net/), which can generate pcap files that can be read by Wireshark. Go to [tutorials](https://github.com/ZGC-LLM-Safety/TrafficLLM/tree/master/tutorials) for more details.
 - [x] [2024.10.28] 🎉🎉 We have update the adaptation code for using GLM4 to build TrafficLLM, which has a faster tuning and inference speed than ChatGLM2. Go to [Adapt2GLM4](https://github.com/ZGC-LLM-Safety/TrafficLLM/tree/master/Adapt2GLM4) for more details.
@@ -125,7 +126,7 @@ TrafficLLM employs three core techniques: **traffic-domain tokenization** to pro
 TrafficLLM is trained based on existing open-sourced LLMs. Please follow the instructions to prepare the checkpoints.
 
 * `ChatGLM2`: Prepare the base model ChatGLM, which is an open-sourced LLM with light-wise deployment requirements. Please download its weights [here](https://huggingface.co/THUDM/chatglm2-6b). We generally utilize the v2 model with 6B parameters.
-* `Other LLMs`: To adapt other LLMs for traffic analysis tasks, you can reuse the [training data](https://drive.google.com/drive/folders/1RZAOPcNKq73-quA8KG_lkAo_EqlwhlQb) in the repo and modify their training scripts according to the official instructions. For instance, [Llama2](https://github.com/meta-llama/llama-recipes/blob/main/src/llama_recipes/configs/datasets.py) is required to register the new dataset in the configs.
+* `Other LLMs`: To adapt other LLMs for traffic analysis tasks, you can reuse the [training data](https://drive.google.com/drive/folders/1RZAOPcNKq73-quA8KG_lkAo_EqlwhlQb) in the repo and modify their training scripts according to the official instructions. For instance, [Llama2](https://github.com/meta-llama/llama-recipes/blob/main/src/llama_recipes/configs/datasets.py) is required to register the new dataset in the configs. See [llm](https://github.com/ZGC-LLM-Safety/TrafficLLM/tree/master/llm) for more details.
 
 <span id='chapter-2.2'/>
 
@@ -336,6 +337,18 @@ streamlit run trafficllm_server.py
 This demo runs a Web server of TrafficLLM. Access `http://Your-Server-IP:Port` to chat in the chatbox.
 
 ![Web demo](images/web-demo-new.gif)
+
+## Using TrafficLLM Build Agents
+
+Now, we can use TrafficLLM build powerful agents based on [Qwen-Agent](https://github.com/QwenLM/Qwen-Agent). See [agent](https://github.com/ZGC-LLM-Safety/TrafficLLM/tree/master/agent)
+
+### Single-Agent System
+
+![Single-agent demo](images/single-agent.mp4)
+
+### Multi-Agent System
+
+![Multi-agent demo](images/multi-agent.mp4)
 
 ## Acknowledgements
 
