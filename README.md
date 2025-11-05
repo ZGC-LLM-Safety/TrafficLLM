@@ -15,7 +15,7 @@ The repository of **TrafficLLM**, a universal LLM adaptation framework to learn 
 Note: this code is based on [ChatGLM2](https://github.com/THUDM/ChatGLM2-6B) and [Llama2](https://github.com/meta-llama/llama-recipes). Many thanks to the authors.
 
 ## News
-- [x] [2025.11.06] 🌟🌟 We update the MCP configure of using TrafficLLM to build sigle-agent and multi-agent frameworks for network traffic analysis.
+- [x] [2025.11.06] 🌟🌟 We update the [MCP configuration](https://github.com/ZGC-LLM-Safety/TrafficLLM/tree/master/agent) that uses TrafficLLM to build single-agent and multi-agent systems for network traffic analysis.
 - [x] [2025.04.05] 🔥🔥 We release the preprint paper at the [Arxiv website](https://arxiv.org/abs/2504.04222). 
 - [x] [2024.11.26] 🌲🌲 We release the generation code to use TrafficLLM to generate packets with [Scapy](https://scapy.net/), which can generate pcap files that can be read by Wireshark. Go to [tutorials](https://github.com/ZGC-LLM-Safety/TrafficLLM/tree/master/tutorials) for more details.
 - [x] [2024.10.28] 🎉🎉 We have update the adaptation code for using GLM4 to build TrafficLLM, which has a faster tuning and inference speed than ChatGLM2. Go to [Adapt2GLM4](https://github.com/ZGC-LLM-Safety/TrafficLLM/tree/master/Adapt2GLM4) for more details.
