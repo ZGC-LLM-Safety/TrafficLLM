@@ -340,15 +340,19 @@ This demo runs a Web server of TrafficLLM. Access `http://Your-Server-IP:Port` t
 
 ## Using TrafficLLM Build Agents
 
-Now, we can use TrafficLLM build powerful agents based on [Qwen-Agent](https://github.com/QwenLM/Qwen-Agent). See [agent](https://github.com/ZGC-LLM-Safety/TrafficLLM/tree/master/agent)
+Now, we can use TrafficLLM build powerful agents based on [Qwen-Agent](https://github.com/QwenLM/Qwen-Agent). See [agent](https://github.com/ZGC-LLM-Safety/TrafficLLM/tree/master/agent) for more details.
 
 ### Single-Agent System
 
-![Single-agent demo](images/single-agent.mp4)
+<video width="320" height="240" controls>
+    <source src="images/single-agent.mp4" type="video/mp4">
+</video>
 
 ### Multi-Agent System
 
-![Multi-agent demo](images/multi-agent.mp4)
+<video width="320" height="240" controls>
+    <source src="images/multi-agent.mp4" type="video/mp4">
+</video>
 
 ## Acknowledgements
 
